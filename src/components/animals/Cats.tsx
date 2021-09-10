@@ -18,29 +18,14 @@ export default class Cats extends Component<CatsProps, CatsState> {
   }
 
   componentDidMount(): void {
-    console.log('component mounted')
-    // fetch(`https://api.thecatapi.com/v1/images/search`)
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     this.setState({
-    //       url: data[0].url,
-    //     })
-    //   })
-
-    // so cat shows right away instead of waiting 5 secs
     this.fetchCats()
     this.setState({
-      // using windows because ts was mad without it
+      // using windows to satisfy ts
       interval: window.setInterval(this.fetchCats, 5000),
     })
   }
 
-  componentDidUpdate(): void {
-    console.log(this.state.interval)
-  }
-
-  componentWillMount(): void {
-    console.log('unmounting')
+  componentWillUnmount(): void {
     clearInterval(this.state.interval)
   }
 
@@ -48,7 +33,6 @@ export default class Cats extends Component<CatsProps, CatsState> {
     try {
       let res = await fetch(`https://api.thecatapi.com/v1/images/search`)
       let data = await res.json()
-      console.log(data)
       this.setState({
         url: data[0].url,
       })
@@ -58,10 +42,15 @@ export default class Cats extends Component<CatsProps, CatsState> {
   }
 
   render() {
+    const { url } = this.state
     return (
       <div className='cats'>
         <h1>Cats</h1>
-        <img src={this.state.url} alt='Random Cat' />
+        {url === '' ? (
+          <h1>Bummer! These cats must not like people....</h1>
+        ) : (
+          <img src={url} alt='Random Cat' />
+        )}
       </div>
     )
   }
