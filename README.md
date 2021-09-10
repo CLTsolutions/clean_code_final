@@ -1,8 +1,8 @@
 # Cleaning Up Code -- Final Version
 
-### This is the final version of my bonus Friday **Cleaning up your code/README** lesson for [EFA's]('https://elevenfifty.org/') red badge students.
+### This is the final version of my bonus Friday **Cleaning up your code/README** lesson for [EFA's](https://elevenfifty.org/) red badge students.
 
-> _To find the initial cluttered version of this app given to students for clean up, checkout this [repo](git@github.com:CLTsolutions/cleaning_up_code.git)._
+> _To find the initial cluttered version of this app given to students for clean up, checkout this [repo](https://github.com/CLTsolutions/cleaning_up_code)._
 
 <!-- ![cats](https://user-images.githubusercontent.com/73909880/132887236-d63d6b49-2ed6-47ce-a02e-eeccc8e89102.png)
 
